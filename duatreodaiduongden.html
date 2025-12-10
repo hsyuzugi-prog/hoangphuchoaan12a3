@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đứa Trẻ Dưới Đại Dương Đen | Giới Thiệu Sách</title>
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Tùy chỉnh màu sắc và font */
+        :root {
+            --color-dark-blue: #0A1931; /* Nền đêm sâu thẳm */
+            --color-star-light: #E0F7FA; /* Ánh sao lấp lánh */
+            --color-ocean-glow: #185ADB; /* Ánh sáng đại dương */
+            --font-poetic: 'Times New Roman', Times, serif;
+        }
+        body {
+            font-family: var(--font-poetic);
+            color: var(--color-star-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+            
+            /* --- NỀN ẢNH TĨNH: MÔ PHỎNG ĐẠI DƯƠNG ĐEN --- */
+            background-image: url('https://photo2.tinhte.vn/data/attachment-files/2024/04/8316545_27cc4f79f058dbdbdfd0c371d92d47da.jpg'); 
+            background-size: cover;
+            background-attachment: fixed; /* Giữ ảnh cố định khi cuộn */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #0d1a2f; /* Màu dự phòng */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .glow-text {
+            text-shadow: 0 0 5px var(--color-ocean-glow), 0 0 10px rgba(24, 90, 219, 0.5);
+        }
+        blockquote {
+            border-left-color: var(--color-ocean-glow);
+        }
+        .book-cover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--color-ocean-glow);
+        }
+
+        /* --- LOẠI BỎ HIỆU ỨNG SÓNG BIỂN CŨ --- */
+        .ocean-background { display: none; }
+
+        /* --- HIỆU ỨNG NỐT NHẠC NHẤP NHÁY TIÊU ĐỀ (GIỮ LẠI) --- */
+        .musical-note {
+            display: inline-block;
+            color: var(--color-ocean-glow);
+            animation: bounce-glow 2s infinite ease-in-out;
+            margin-left: 10px;
+        }
+        
+        @keyframes bounce-glow {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; text-shadow: 0 0 5px var(--color-ocean-glow); }
+            50% { transform: translateY(-5px) scale(1.2); opacity: 1; text-shadow: 0 0 15px var(--color-ocean-glow); }
+        }
+
+        /* --- HIỆU ỨNG BONG BÓNG ĐẠI DƯƠNG MỚI --- */
+        @keyframes bubble-rise {
+            0% { 
+                transform: translateY(0) scale(0.5); 
+                opacity: 0; 
+            }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.6; }
+            100% { 
+                transform: translateY(-100vh) scale(1.5); 
+                opacity: 0; 
+            }
+        }
+
+        .floating-bubble-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Đặt dưới nội dung chính */
+            pointer-events: none;
+        }
+
+        .floating-bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2); /* Màu trắng trong suốt */
+            box-shadow: 0 0 8px rgba(24, 90, 219, 0.8); /* Ánh sáng xanh mờ */
+            animation: bubble-rise 25s infinite linear; /* Rất chậm và lơ lửng */
+        }
+        
+        /* Tạo nhiều bong bóng với vị trí, kích cỡ, và độ trễ khác nhau */
+        .floating-bubble:nth-child(1) { left: 10%; top: 90%; width: 15px; height: 15px; animation-delay: 0s; animation-duration: 22s; }
+        .floating-bubble:nth-child(2) { left: 25%; top: 85%; width: 10px; height: 10px; animation-delay: 4s; animation-duration: 18s; }
+        .floating-bubble:nth-child(3) { left: 40%; top: 70%; width: 20px; height: 20px; animation-delay: 8s; animation-duration: 25s; }
+        .floating-bubble:nth-child(4) { left: 60%; top: 95%; width: 12px; height: 12px; animation-delay: 12s; animation-duration: 15s; }
+        .floating-bubble:nth-child(5) { left: 80%; top: 80%; width: 18px; height: 18px; animation-delay: 16s; animation-duration: 20s; }
+        .floating-bubble:nth-child(6) { left: 15%; top: 50%; width: 8px; height: 8px; animation-delay: 2s; animation-duration: 24s; }
+        .floating-bubble:nth-child(7) { left: 70%; top: 40%; width: 22px; height: 22px; animation-delay: 6s; animation-duration: 19s; }
+        .floating-bubble:nth-child(8) { left: 90%; top: 60%; width: 14px; height: 14px; animation-delay: 10s; animation-duration: 23s; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Lớp BONG BÓNG ĐẠI DƯƠNG Lấp Lánh Nền (MỚI) -->
+    <div class="floating-bubble-bg">
+        <span class="floating-bubble"></span>
+        <span class="floating-bubble"></span>
+        <span class="floating-bubble"></span>
+        <span class="floating-bubble"></span>
+        <span class="floating-bubble"></span>
+        <span class="floating-bubble"></span>
+        <span class="floating-bubble"></span>
+        <span class="floating-bubble"></span>
+    </div>
+
+    <!-- 1. Header -->
+    <header class="bg-slate-900/60 backdrop-blur-md p-6 md:p-8 shadow-2xl sticky top-0 z-10 border-b border-blue-900/30">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-3xl md:text-4xl font-extrabold tracking-wider glow-text uppercase flex items-center">
+                ĐỨA TRẺ DƯỚI ĐẠI DƯƠNG ĐEN
+                <span class="musical-note text-4xl">♫</span>
+            </h1>
+            <p class="text-xl md:text-2xl mt-2 md:mt-0 font-light text-gray-300">
+                Tác giả: <span class="font-medium text-white">Châu Sa Đáy Mắt</span>
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <!-- Phần chính -->
+        <section class="grid grid-cols-1 lg:col-cols-3 gap-8 mb-12">
+            
+            <!-- Ảnh bìa sách -->
+            <div class="lg:col-span-1 flex justify-center">
+                <div class="p-4 bg-slate-700/50 backdrop-blur-sm rounded-xl book-cover transition-transform transform hover:scale-[1.03] border border-blue-500/20">
+                    <img src="https://cdn1.fahasa.com/media/catalog/product/_/m/_m_tr_i_d_ng_en_b_a_1.png" 
+                         alt="Bìa sách Đứa Trẻ Dưới Đại Dương Đen" 
+                         class="rounded-lg w-full max-w-sm mx-auto"
+                         onerror="this.onerror=null;this.src='https://placehold.co/400x600/0A1931/E0F7FA?text=B%C3%ACa+S%C3%A1ch';">
+                </div>
+            </div>
+
+            <!-- Tóm tắt & Cảm nhận -->
+            <article class="lg:col-span-2 space-y-8">
+                
+                <!-- Tóm tắt Nội dung -->
+                <div class="p-6 bg-slate-700/60 backdrop-blur-md rounded-xl shadow-lg border border-blue-500/10">
+                    <h2 class="text-2xl font-bold mb-4 text-blue-300 glow-text flex items-center">
+                        <span class="mr-2">★</span> Tóm Tắt Nội Dung
+                    </h2>
+                    <p class="text-lg text-slate-100">
+                        "Đứa Trẻ Dưới Đại Dương Đen" là một câu chuyện huyền ảo, tâm lý sâu sắc về hành trình trưởng thành của một cậu bé sống cô độc tại một thành phố ven biển chìm trong bóng tối. Cậu luôn bị ám ảnh bởi tiếng gọi từ sâu thẳm đại dương, nơi mà người ta đồn đại có một thế giới khác tồn tại.
+                    </p>
+                    <p class="text-lg text-slate-100 mt-3">
+                        Câu chuyện khám phá những góc khuất của tâm hồn, sự cô đơn, và khao khát tìm kiếm ánh sáng. Cậu bé phải đối mặt với nỗi sợ hãi lớn nhất của mình để khám phá ra sự thật về gia đình và nguồn gốc của "Đại dương Đen" bao trùm cuộc đời cậu, hứa hẹn một kết thúc đầy bất ngờ và ý nghĩa.
+                    </p>
+                </div>
+
+                <!-- Cảm nhận Cá nhân -->
+                <div class="p-6 bg-slate-700/60 backdrop-blur-md rounded-xl shadow-lg border-t-2 border-var(--color-ocean-glow)">
+                    <h2 class="text-2xl font-bold mb-4 glow-text text-yellow-200">✎ Cảm Nhận Cá Nhân</h2>
+                    <p class="italic text-lg text-slate-100">
+                        Tác phẩm này không chỉ là một cuốn tiểu thuyết mà còn là một bản tuyên ngôn về lòng dũng cảm và sự tha thứ. Nó khiến tôi suy ngẫm về ý nghĩa của gia đình và ánh sáng bên trong mỗi người, dù cuộc sống có tăm tối đến đâu. Lối dẫn chuyện chậm rãi nhưng cuốn hút, rất phù hợp với font Times New Roman trang trọng này.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+        
+        <!-- Trích Dẫn & Fun Fact -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Trích dẫn hay -->
+            <div class="p-6 bg-slate-600/60 backdrop-blur-md rounded-xl shadow-lg flex flex-col justify-center border border-white/10">
+                <h2 class="text-2xl font-bold mb-4 text-white">❝ Trích Dẫn Hay</h2>
+                <blockquote class="border-l-4 border-blue-400 pl-4 italic text-xl text-white">
+                    <p>
+                        Màu đen không phải là kết thúc, màu đen là nơi những ngôi sao đầu tiên được sinh ra.
+                    </p>
+                    <footer class="mt-2 text-sm text-gray-300">— Trích đoạn</footer>
+                </blockquote>
+            </div>
+
+            <!-- Thông tin thú vị -->
+            <div class="p-6 bg-slate-600/60 backdrop-blur-md rounded-xl shadow-lg border border-white/10">
+                <h2 class="text-2xl font-bold mb-4 text-white">✦ 3 Thông Tin Thú Vị</h2>
+                <ul class="list-disc list-inside space-y-3 text-white">
+                    <li class="pl-2">
+                        <span class="font-semibold text-yellow-300">Cảm hứng:</span> Tác giả hngoc đã viết cuốn sách sau một chuyến đi dài ngày đến bờ biển Iceland.
+                    </li>
+                    <li class="pl-2">
+                        <span class="font-semibold text-yellow-300">Ý nghĩa ẩn dụ:</span> "Đại dương Đen" là ẩn dụ cho trầm cảm và những nỗi sợ hãi vô hình trong tâm hồn con người.
+                    </li>
+                    <li class="pl-2">
+                        <span class="font-semibold text-yellow-300">Thành tựu:</span> Sách được đề cử cho giải thưởng Văn học Thanh thiếu niên lớn nhất năm 2024.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="mt-12 p-4 bg-slate-900/80 text-center text-sm text-gray-400">
+        <div class="container mx-auto">
+            <p>&copy; 2025 Dự án Web giới thiệu tác phẩm văn học | Hoàn thành với HTML Semantic và CSS tương thích.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
